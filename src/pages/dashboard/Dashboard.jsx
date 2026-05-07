@@ -303,8 +303,8 @@ const Dashboard = () => {
   const handleCreateTradeProfit = async () => {
     const value = Number(profitPercent);
 
-    if (profitPercent.trim() === "" || isNaN(value) || value < 0 || value > 100) {
-      alert("Enter valid profit percentage between 0 and 100");
+    if (profitPercent.trim() === "" || isNaN(value) || value < -100 || value > 100) {
+      alert("Enter valid profit percentage between -100 and 100");
       return;
     }
 
@@ -1011,7 +1011,7 @@ const Dashboard = () => {
                   placeholder="Profit %, e.g. 2.5"
                   type="number"
                   step="0.01"
-                  min="0"
+                  min="-100"
                   max="100"
                   style={styles.profitInput}
                 />
